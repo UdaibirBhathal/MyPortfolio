@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Professional Portfolio</title>
+  <style>
+    :root {
+      --primary: #e3f2fd;
+      --secondary: #bbdefb;
+      --accent: #2196f3;
+      --text-dark: #0d47a1;
+      --text-light: #ffffff;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--primary);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--accent);
+      color: var(--text-light);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 4px var(--card-shadow);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #cce7ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-light);
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--accent);
+        flex-direction: column;
+        width: 200px;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      background-color: var(--secondary);
+      text-align: center;
+      padding: 2.5rem;
+      border-top: 2px solid var(--accent);
+    }
+
+    .contact h2 {
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: var(--accent);
+      color: var(--text-light);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Udaibir Singh Bhathal</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="intro">
+    <h2>Udaibir Singh Bhathal</h2>
+    <p>I am a dedicated web developer focused on delivering seamless and elegant digital experiences. With a strong foundation in frontend and backend development, I create functional and user-friendly interfaces that adapt across devices. My approach combines aesthetic design with clean code, ensuring performance and scalability.</p>
+    <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 2rem;">
+      <a href="https://github.com/UdaibirBhathal" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="40" height="40" />
+      </a>
+      <a href="https://www.linkedin.com/in/udaibir-singh-bhathal-0968401a5" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="40" height="40" />
+      </a>
+      <a href="https://leetcode.com/u/UdaibirBhathal/" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" width="40" height="40" />
+      </a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Health Management System (iOS)</h3>
+        <p>A complete health tracking solution built using SwiftUI and Firebase for secure real-time medical record updates and user health insights.</p>
+      </div>
+      <div class="project-card">
+        <h3>AnkleHeal</h3>
+        <p>Developed using SwiftUI and Supabase, this app connects physiotherapists and patients for tailored rehabilitation plans and communication.</p>
+      </div>
+      <div class="project-card">
+        <h3>RESTful Bookstore API</h3>
+        <p>A scalable REST API for managing a virtual bookstore, featuring CRUD operations, authentication, and data validation.</p>
+      </div>
+      <!-- <div class="project-card">
+        <h3>To-Do App</h3>
+        <p>A simple and intuitive to-do list application developed with JavaScript and local storage support for task persistence.</p>
+      </div> -->
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="projects">
+      <div class="project-card" style="text-align: left;">
+        <img src="icons/coding.png" alt="Programming" width="36" height="36" style="margin-bottom: 0.5rem;" />
+        <!-- <a href="https://www.flaticon.com/free-icons/web-programming" title="web programming icons">Web programming icons created by Royyan Wijaya - Flaticon</a> -->
+        <h3 style="color: var(--text-dark); margin-bottom: 0.2rem;">Programming</h3>
+        <p style="color: gray;">Python, Java, C, C++</p>
+      </div>
+      <div class="project-card" style="text-align: left;">
+        <img src="icons/website.png" alt="Web" width="36" height="36" style="margin-bottom: 0.5rem;" />
+        <!-- <a href="https://www.flaticon.com/free-icons/web-site" title="web-site icons">Web-site icons created by Hilmy Abiyyu A. - Flaticon</a> -->
+        <h3 style="color: var(--text-dark); margin-bottom: 0.2rem;">Web Development</h3>
+        <p style="color: gray;">React, Node.js, HTML/CSS</p>
+      </div>
+      <div class="project-card" style="text-align: left;">
+        <img src="icons/cloud.png" alt="Cloud" width="36" height="36" style="margin-bottom: 0.5rem;" />
+        <!-- <a href="https://www.flaticon.com/free-icons/code" title="code icons">Code icons created by IconKanan - Flaticon</a> -->
+        <h3 style="color: var(--text-dark); margin-bottom: 0.2rem;">Cloud</h3>
+        <p style="color: gray;">AWS</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>If you'd like to collaborate or have a project in mind, feel free to reach out at <strong>bhathal.udaibir@gmail.com</strong>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Udaibir Singh Bhathal.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
